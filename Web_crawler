@@ -1,0 +1,19 @@
+import requests
+from bs4 import BeautifulSoup
+
+
+url=("www.wikipedia.org")
+code=requests.get("https://"+url)
+plain=code.text
+S=BeautifulSoup(plain)
+count=0
+for link in S.find_all("a"):
+   print(link.get("href"))
+   count+=1
+
+
+print("Total Number Of Websites Crawled : " +str(count))
+
+
+# pip install requests 
+#pip install beautifulsoup4
