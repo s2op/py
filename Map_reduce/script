@@ -1,0 +1,19 @@
+story=open("poem.txt", 'r')
+readstory=story.read()
+dictionary= { }
+
+readstory=readstory.replace("\n", " ")
+wordlist=readstory.split(' ')
+
+
+for word in wordlist:
+    if word in dictionary:
+        dictionary[word]+=1
+    else:
+        dictionary[word]=1
+
+for key,value in dictionary.items():
+    print("word >> " + str(key) + " ,  occured : " + str(value))
+    
+    
+#make a text file with a poem
