@@ -1,0 +1,24 @@
+#Create a Two text files with similar content and different content, And save it in the same folder as your python program.
+
+
+FileOne=open("TextFile1.txt",'r')
+LinesFile1=FileOne.readlines()
+
+
+FileTwo=open("TextFile2.txt", 'r')
+LinesFile2=FileTwo.readlines()
+LineNum=1
+Length1=len(LinesFile1)
+
+
+
+
+for i in range(0, Length1):
+   if(LinesFile1[i].lower()==LinesFile2[i].lower()):
+       print("Files have Similar Content at : " + str(LineNum))
+       LineNum+=1
+   elif(LinesFile1[i] != LinesFile2[i]):
+       print("Different Content at Line : " + str(LineNum))
+       print("File One Has Content " + str(LinesFile1[i]))
+       print("File Two Has Content " + str(LinesFile2[i]))
+       LineNum+=1
