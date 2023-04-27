@@ -1,0 +1,36 @@
+#Packages
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+nltk.download('punkt')
+from nltk.tokenize import word_tokenize
+
+#Taking an example sentence and then tokenizing each word eg: " This", "is" etc.
+example_sent = """This is a sample sentence,showing off
+the stop words filtration."""
+stop_words = set(stopwords.words('english'))
+
+#saving tokenized words in a variable
+word_tokens = word_tokenize(example_sent)
+filtered_sentence=[]
+
+#for every word in the word tokens
+for w in word_tokens:
+	#if the word is NOT in stop_words (in lower case)
+	if not w.lower() in stop_words:
+		filtered_sentence.append(w) #Add to the Filered_Sentence array variable line 15
+
+print(word_tokens)
+print(filtered_sentence)
+
+#Removing Stopwords from a text Document
+file1 = open("text.txt")
+line = file1.read()
+words = line.split()
+for r in words:
+	if not r in stop_words:
+		appendFile = open('filteredtext.txt','a')
+		appendFile.write(" "+r)
+		appendFile.close()
+
+#output is in filteredtext.txt
