@@ -1,0 +1,27 @@
+from tkinter import *
+Window=Tk()
+
+
+L1=Label(Window, text="Enter a Number")
+L1.pack()
+T1=Entry(Window)
+T1.pack()
+
+L2=Label(Window, text="Enter a Number")
+L2.pack()
+T2=Entry(Window)
+T2.pack()
+
+def addition():
+    a=int(T1.get())
+    b=int(T2.get())
+
+    c=a+b
+    print(" Addition= " + str(c))
+    L3=Label(Window, text="Results :" + str(c))
+    L3.pack()
+
+button= Button(Window,text="Add" , fg="white", bg="pink", command=addition)
+button.pack()
+Window.mainloop()
+
