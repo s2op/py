@@ -1,0 +1,34 @@
+#Learn How to Convert Decimal to Binary and Hex To Binary
+
+
+
+a=0b1100110
+b=0b1110011
+d=0b111100111011
+
+print("A is " + str(a) + " , B is " + str(b) + ", D is " + str(d))
+
+#AND
+
+c=a&b
+print(" Bitwise AND = " + str(c))
+
+#OR
+
+c=a|b
+print( " Bitwise OR = " + str(c))
+
+#XOR
+
+c=a^b
+print(" Bitwise XOR = " + str(c))
+
+#Negation
+
+print(" Bitwise Negation on D is " + str(~d))
+print("  Bitwise Left shift on D is " + str(d<<2))
+print("  Bitwise Right shift on D is " + str(d>>4))
+
+
+
+#no modules & no text files
