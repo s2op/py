@@ -1,0 +1,27 @@
+def edit_distance(string1,string2):
+
+    if len(string1)>len(string2):
+        difference=len(string1)-len(string2)
+    elif len(string2) > len(string1):
+        difference=len(string2)-len(string1)
+    else:
+        difference=0
+
+
+    for i in range(len(string1)):
+        if string1[i] != string2[i]:
+            difference +=1
+            
+    return difference
+
+String1=input("Enter First Word :  \n")
+String2=input("Enter Second Word : \n")
+
+a=String1.lower()
+b=String2.lower()
+
+Distance= str(edit_distance(a,b))
+print(" The Distance between them is " + Distance + " Letters")
+
+
+#no file & no module
