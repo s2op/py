@@ -1,0 +1,37 @@
+import numpy as np
+
+def pageRank(M, num_iter: int = 100, d: float = 0.85):
+
+	N = M.shape[1]
+	v = np.ones(N) / N
+	M_hat = (d * M + (1 - d) / N)
+	for i in range(num_iter):
+		v = M_hat @ v
+		print("\nafter " + str(i+1) +" Step " )
+		for j in range(0,len(v)):
+			print("Page Rank of " + str(j+1) + " : " + str(v[j] ))
+		return v
+Number=int(input("Enter the number of webpages : "))
+
+List_1=[]
+Matrix=[]
+for i in range(0 , Number*Number):
+	n =float(input("Enter Matrix Element (0-1): "))
+	List_1.append(n)
+
+while List_1 != []:
+	Matrix.append(List_1[:Number])
+	List_1=List_1[Number:]
+
+dampingfactor=(1/Number)
+
+for i in range(0,Number):
+	print("\nInitial Page Rank of page " + str(i+1) + " : " + str(dampingfactor)
+)
+M = np.array(Matrix)
+v = pageRank(M, Number, dampingfactor)
+for i in range (0,len(v)):
+	print("\nFinal Pagerank of page " + str(i+1) + " : " + str(v[i]))
+
+
+#pip install numpy
